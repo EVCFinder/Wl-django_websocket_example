@@ -22,4 +22,5 @@ urlpatterns = [
     path('async/chat/', include('ChatAsync.urls')),
     path('admin/', admin.site.urls),
     path('randomint/', include('RandomIntegers.urls')),
+    path('async/randomint/', include('AsyncRandomIntegers.urls')),
 ]

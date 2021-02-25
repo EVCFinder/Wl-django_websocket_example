@@ -1,0 +1,38 @@
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+</head>
+<body>
+    <h1>this example is of async WebSocket but still blocks the running application</h1>
+    <h1 id="chat-log"></h1><br>
+    
+    
+    <script>
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/async/randomint/'
+        );
+        chatSocket.onopen = function(e) {
+            alert(e)
+            console.log(e)
+        }
+        chatSocket.onclose = function(e) {
+            alert(e)
+            console.log(e)
+            console.error('Chat socket closed unexpectedly');
+        }
+
+
+        chatSocket.onmessage = function(e) {
+            console.log(e.data)
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').innerHTML = (data.message);
+        };
+
+    </script>
+</body>
+</html>

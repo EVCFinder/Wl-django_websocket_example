@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'chat',
     'ChatAsync',
     'RandomIntegers',
+    'AsyncRandomIntegers',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
