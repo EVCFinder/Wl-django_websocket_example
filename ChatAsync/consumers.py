@@ -8,16 +8,18 @@ class ChatConsumer(AsyncWebsocketConsumer):
         print('async')
         print(type(self))
         print('channel_name',self.channel_name)
-        print('channel_layer',self.channel_layer)
-        print('channel_layer_alias',self.channel_layer_alias)
-        print('channel_receive',self.channel_receive)
-        print('groups',self.groups)
-        print('base_send',self.base_send)
+        # print('channel_layer',self.channel_layer)
+        # print('channel_layer_alias',self.channel_layer_alias)
+        # print('channel_receive',self.channel_receive)
+        # print('groups',self.groups)
+        # print('base_send',self.base_send)
         #print('__slots__',self.__slots__)
         #print('dict',self.__dict__)
 
-        for i in self.scope:
-            print(i,self.scope[i])
+        # for i in self.scope:
+        #     print(i,self.scope[i])
+
+        #print('scope method',self.scope["method"])
         
 
 
@@ -85,8 +87,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def chat_message(self, event):
-        #print('message_evnt',event)
-        #print('channel_name',self.channel_name)
+        print('inside chat message')
+        print('message_evnt',event)
+        print('channel_name',self.channel_name)
         message = event['message']
         print('async','send message',message)
         # Send message to WebSocket

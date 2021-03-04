@@ -17,7 +17,24 @@ from channels.layers import get_channel_layer
 channel_layer = get_channel_layer()
 from asgiref.sync import async_to_sync
 
-async_to_sync(channel_layer.send)("specific.a992f2a092dc4cb4b990187600499515!ab8fbc44f24c4b3abd345c85c0e4a694", {
+async_to_sync(channel_layer.send)("specific.b654b330e25f489daf54f135722a59eb!5b5a38293090486bba0e656ec3e69c69", {
     "type": "chat.message",
+    "message": "Hello there!",
+})
+# this is also works 
+############################# DON'T KNOW WHY ?
+async_to_sync(channel_layer.send)("specific.b654b330e25f489daf54f135722a59eb!5b5a38293090486bba0e656ec3e69c69", {
+    "type": "chat_message",
+    "message": "Hello there!",
+})
+
+async_to_sync(channel_layer.group_send)('chat_pushpak1',{
+    "type": "chat.message",
+    "message": "Hello there!",
+})
+# this is also works 
+############################# DON'T KNOW WHY ?
+async_to_sync(channel_layer.group_send)('chat_pushpak1',{
+    "type": "chat_message",
     "message": "Hello there!",
 })
