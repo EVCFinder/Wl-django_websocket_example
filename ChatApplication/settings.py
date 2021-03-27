@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'channels',
+    'testOCPP',
     'chat',
     'ChatAsync',
     'RandomIntegers',

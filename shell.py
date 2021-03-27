@@ -23,7 +23,7 @@ async_to_sync(channel_layer.send)("specific.b654b330e25f489daf54f135722a59eb!5b5
 })
 # this is also works 
 ############################# DON'T KNOW WHY ?
-async_to_sync(channel_layer.send)("specific.b654b330e25f489daf54f135722a59eb!5b5a38293090486bba0e656ec3e69c69", {
+async_to_sync(channel_layer.send)("specific.3b8fa0c4d0bf46038d63881ce8c1be47!99cc35db9dbe4224a61cea24587bb2e8", {
     "type": "chat_message",
     "message": "Hello there!",
 })
